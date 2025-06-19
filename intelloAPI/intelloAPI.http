@@ -1,0 +1,6 @@
+@intelloAPI_HostAddress = http://localhost:5227
+
+GET {{intelloAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
