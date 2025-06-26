@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infrastructure.Repository;
+using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
@@ -10,6 +12,11 @@ namespace Infrastructure
             options.UseSqlite("Data Source=bazadanych.db"));
 
             services.AddScoped<DatabaseSeeder>();
+
+            services.AddScoped<IDokumentRepository, DokumentRepository>();
+            services.AddScoped<IKontrahentRepository, KontrahentRepository>();
+            services.AddScoped<IPozycjaRepository, PozycjaRepository>();
+            services.AddScoped<ITowarRepository, TowarRepository>();
         }
     }
 }
